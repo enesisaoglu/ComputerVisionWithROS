@@ -1,0 +1,8 @@
+prefix=/home/enesisaoglu/robot2_ws/install
+
+Name: motor_commands
+Description: Description of motor_commands
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

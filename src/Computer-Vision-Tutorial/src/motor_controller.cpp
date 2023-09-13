@@ -19,8 +19,8 @@ void commandsCallback(const std_msgs::String::ConstPtr& msg) {
   }
   else if(command == "GO_REALLY_FAST")
   {
-    leftSpeed = -10.0; // radians per second
-    rightSpeed = -10.0;
+    leftSpeed = -20.0; // radians per second
+    rightSpeed = -20.0;
   }
   else if(command == "BACK") 
   {
@@ -55,7 +55,7 @@ int main(int argc, char **argv) {
   ros::init(argc, argv, "motorController");
   ros::NodeHandle n;
 
-  ros::Subscriber commandSub = n.subscribe("motor_commands", 1000, commandsCallback);
+  ros::Subscriber commandSub = n.subscribe("/motor_commands", 1000, commandsCallback);
 
   leftWheelPub = n.advertise<std_msgs::Float64>("/left_wheel_controller/command", 1000);
   rightWheelPub = n.advertise<std_msgs::Float64>("/right_wheel_controller/command", 1000);
